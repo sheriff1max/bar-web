@@ -1,0 +1,36 @@
+# ==========================================================================
+# Netlify: положите файл в корень проекта и подключите репозиторий
+# на netlify.com → "Import an existing project". Публикация — при каждом push.
+# ==========================================================================
+
+[build]
+  # сборки нет: сайт уже статика. Команда нужна только для валидации JSON
+  command = "python3 tools/check_content.py"
+  publish = "."
+
+# что попадает в публикацию
+[build.environment]
+  PYTHON_VERSION = "3.12"
+
+# не публикуем служебное
+[[headers]]
+  for = "/data/site.json"
+  [headers.values]
+    Cache-Control = "no-cache, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# редиректы/алиасы при необходимости:
+# [[redirects]]
+#   from = "/menu"
+#   to = "/#menyu"
+#   status = 301

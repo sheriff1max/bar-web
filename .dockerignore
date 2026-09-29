@@ -1,0 +1,13 @@
+# в Docker-образ не тащим ничего лишнего
+node_modules/
+tools/
+serve.js
+deploy/
+.git/
+.gitignore
+netlify.toml
+vercel.json
+README.md
+docs/
+assets/img/_original/
+*.md

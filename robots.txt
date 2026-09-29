@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Картинки и стили индексировать можно, служебное — нет
+Disallow: /tools/
+Disallow: /data/
+
+Sitemap: https://example.com/sitemap.xml

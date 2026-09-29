@@ -1,0 +1,238 @@
+{
+  "site": {
+    "name": "Две подковы",
+    "tagline": "Рюмочная",
+    "description": "Рюмочная «Две подковы» в Красноярске: средиземноморская кухня, авторские коктейли, винная карта и банкеты. Бронирование столиков по телефону +7 (900) 000-00-00.",
+    "url": "https://example.com",
+    "logoText": "Две подковы",
+    "phone": "+7 (900) 000-00-00",
+    "phoneHref": "+79000000000",
+    "email": "hello@oliva.example",
+    "address": "г. Москва, ул. Примерная, 12",
+    "mapUrl": "https://yandex.ru/maps/-/CXUbuWn6",
+    "social": [
+      { "label": "Telegram", "url": "https://t.me/oliva" },
+      { "label": "VK", "url": "https://vk.com/oliva" }
+    ],
+    "currency": "₽",
+    "nav": [
+      { "label": "О нас", "target": "o-nas" },
+      { "label": "Меню", "target": "menyu" },
+      { "label": "Акции", "target": "akcii" },
+      { "label": "Галерея", "target": "galereya" },
+      { "label": "Команда", "target": "komanda" },
+      { "label": "Контакты", "target": "kontakty" }
+    ],
+    "cta": { "label": "Забронировать стол", "target": "kontakty" }
+  },
+
+  "settings": {
+    "colors": {
+      "bg": "#12100e",
+      "bgSoft": "#1a1714",
+      "card": "#1e1a16",
+      "text": "#f2ece2",
+      "muted": "#a49b8d",
+      "accent": "#c9a227",
+      "accentText": "#12100e",
+      "line": "#2c2621"
+    },
+    "radius": 14,
+    "maxWidth": 1180,
+    "blockGap": 96,
+    "imageRatio": "4 / 3",
+    "menuColumns": 2,
+    "galleryColumns": 3,
+    "teamColumns": 3,
+    "animateOnScroll": true
+  },
+
+  "blocks": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "visible": true,
+      "eyebrow": "с 2012 года",
+      "title": "Вкус Средиземноморья в центре города",
+      "text": "Свежие морепродукты, дровяная печь и винная карта из 180 позиций. Ужин, который запомнится.",
+      "image": {
+        "src": "assets/img/hero.jpg",
+        "alt": "Зал ресторана «Олива» вечером",
+        "overlay": 0.55
+      },
+      "buttons": [
+        { "label": "Посмотреть меню", "target": "menyu", "style": "primary" },
+        { "label": "Забронировать стол", "target": "kontakty", "style": "ghost" }
+      ],
+      "facts": [
+        { "value": "13", "label": "лет работы" },
+        { "value": "180", "label": "вин в карте" },
+        { "value": "4.9", "label": "рейтинг гостей" }
+      ]
+    },
+
+    {
+      "id": "akcii",
+      "type": "promo",
+      "visible": true,
+      "label": "Акция до 31 октября",
+      "title": "Сет «Дегустация» за 2 490 ₽ вместо 3 200 ₽",
+      "text": "Пять авторных подач от шефа и бокал игристого в подарок. Действует ежедневно с 12:00 до 17:00, кроме выходных.",
+      "image": { "src": "assets/img/promo.jpg", "alt": "Дегустационный сет на столе" },
+      "buttons": [
+        { "label": "Забронировать", "target": "kontakty", "style": "primary" }
+      ]
+    },
+
+    {
+      "id": "o-nas",
+      "type": "text-image",
+      "visible": true,
+      "imagePosition": "left",
+      "title": "О ресторане",
+      "text": "«Олива» — это семейный ресторан, где рецепты южной Италии и греческих островов готовят на локальных продуктах. Овощи привозят фермеры Подмосковья, рыбу и морепродукты — дважды в неделю напрямую.\n\nМы выпекаем хлеб каждое утро, делаем пасту вручную и держим дровяную печь при 400 °C. Никаких полуфабрикатов — только то, что можно подать гостю с открытым лицом.",
+      "image": {
+        "src": "assets/img/about.jpg",
+        "alt": "Шеф-повар ресторана оформляет блюдо",
+        "caption": "Шеф-повар Марк Соколов"
+      },
+      "features": [
+        "Дровяная печь и открытая кухня",
+        "Свежая рыба дважды в неделю",
+        "Собственная пекарня"
+      ],
+      "buttons": [
+        { "label": "Наша команда", "target": "komanda", "style": "ghost" }
+      ]
+    },
+
+    {
+      "id": "menyu",
+      "type": "menu",
+      "visible": true,
+      "title": "Меню",
+      "subtitle": "Цены действительны с 1 сентября. Обновляем меню каждый сезон.",
+      "note": "Полная карта блюд и вин — у официанта. Возможны изменения по сезонным продуктам.",
+      "categories": [
+        {
+          "name": "Холодные закуски",
+          "items": [
+            { "name": "Тартар из тунца", "description": "авокадо, юдзу, кунжут, чипсы из нори", "price": 890, "oldPrice": null, "tags": ["хит"] },
+            { "name": "Буррата с томатами", "description": "томаты конфит, базилик, оливковое масло DOP", "price": 720, "oldPrice": null, "tags": ["вег"] },
+            { "name": "Карпаччо из говядины", "description": "руккола, пармезан 24 месяца, трюфельное масло", "price": 780, "oldPrice": 890, "tags": ["акция"] }
+          ]
+        },
+        {
+          "name": "Горячие блюда",
+          "items": [
+            { "name": "Паста с крабом", "description": "домашние тальятелле, мясо камчатского краба, биск", "price": 1490, "oldPrice": null, "tags": ["хит"] },
+            { "name": "Сибас на гриле", "description": "целиком, лимон, каперсы, картофель конфи", "price": 1650, "oldPrice": null, "tags": [] },
+            { "name": "Ризотто с белыми грибами", "description": "карнароли, пармезан, грибной бульон", "price": 980, "oldPrice": null, "tags": ["вег"] }
+          ]
+        },
+        {
+          "name": "Из дровяной печи",
+          "items": [
+            { "name": "Пицца «Олива»", "description": "моцарелла фиор ди латте, прошутто, руккола, вяленые томаты", "price": 890, "oldPrice": null, "tags": [] },
+            { "name": "Фокачча с розмарином", "description": "оливковое масло, морская соль, чесночный крем", "price": 390, "oldPrice": null, "tags": ["вег"] }
+          ]
+        },
+        {
+          "name": "Десерты",
+          "items": [
+            { "name": "Тирамису «Олива»", "description": "маскарпоне, эспрессо, амаретто", "price": 480, "oldPrice": null, "tags": ["хит"] },
+            { "name": "Панна-котта", "description": "ваниль Бурбон, соус из инжира", "price": 420, "oldPrice": null, "tags": [] }
+          ]
+        },
+        {
+          "name": "Бар",
+          "items": [
+            { "name": "Авторский лимонад «Цитрус»", "description": "грейпфрут, розмарин, тоник", "price": 350, "oldPrice": null, "tags": [] },
+            { "name": "Бокал Просекко DOC", "description": "150 мл, Италия, Венето", "price": 590, "oldPrice": null, "tags": [] }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "galereya",
+      "type": "gallery",
+      "visible": true,
+      "title": "Галерея",
+      "subtitle": "Интерьер, подача и вечера с живой музыкой.",
+      "images": [
+        { "src": "assets/img/interer-1.svg", "alt": "Основной зал ресторана", "caption": "Основной зал" },
+        { "src": "assets/img/interer-2.svg", "alt": "Барная стойка", "caption": "Бар" },
+        { "src": "assets/img/interer-3.svg", "alt": "Летняя веранда", "caption": "Веранда" },
+        { "src": "assets/img/blyudo-1.svg", "alt": "Паста с крабом", "caption": "Паста с крабом" },
+        { "src": "assets/img/blyudo-2.svg", "alt": "Сибас на гриле", "caption": "Сибас на гриле" },
+        { "src": "assets/img/blyudo-3.svg", "alt": "Десерт", "caption": "Тирамису" }
+      ]
+    },
+
+    {
+      "id": "komanda",
+      "type": "team",
+      "visible": true,
+      "title": "Команда",
+      "subtitle": "Люди, которые делают ваш вечер.",
+      "people": [
+        {
+          "name": "Марк Соколов",
+          "role": "Шеф-повар",
+          "text": "12 лет в профессии, стажировки в Неаполе и Сан-Себастьяне. Отвечает за печь и сезонное меню.",
+          "photo": "assets/img/komanda-1.svg"
+        },
+        {
+          "name": "Анна Ветрова",
+          "role": "Сомелье",
+          "text": "Сертификат WSET Level 3. Собрала винную карту из 180 позиций, ведёт дегустации по четвергам.",
+          "photo": "assets/img/komanda-2.svg"
+        },
+        {
+          "name": "Игорь Лебедев",
+          "role": "Управляющий",
+          "text": "Отвечает за сервис и банкеты. Поможет организовать событие от 10 до 80 гостей.",
+          "photo": "assets/img/komanda-1.svg"
+        }
+      ]
+    },
+
+    {
+      "id": "bankety",
+      "type": "text-image",
+      "visible": true,
+      "imagePosition": "right",
+      "title": "Банкеты и события",
+      "text": "Проводим свадьбы, юбилеи и корпоративные ужины. Отдельный зал на 40 гостей, своя площадка для церемонии, меню под бюджет и диетические ограничения.\n\nДегустационный ужин для организаторов — бесплатно.",
+      "image": { "src": "assets/img/interer-2.svg", "alt": "Отдельный зал для банкетов" },
+      "features": [
+        "Зал до 40 гостей",
+        "Меню от 3 500 ₽ на человека",
+        "Своя парковка"
+      ],
+      "buttons": [
+        { "label": "Обсудить событие", "target": "kontakty", "style": "primary" }
+      ]
+    },
+
+    {
+      "id": "kontakty",
+      "type": "contacts",
+      "visible": true,
+      "title": "Контакты и часы работы",
+      "schedule": [
+        { "days": "Понедельник — четверг", "hours": "12:00 — 00:00" },
+        { "days": "Пятница — суббота", "hours": "12:00 — 02:00" },
+        { "days": "Воскресенье", "hours": "12:00 — 23:00" }
+      ],
+      "extra": [
+        "Кухня работает до 23:00 (пт—сб до 01:00)",
+        "Бизнес-ланч по будням 12:00—16:00",
+        "Есть детское меню и стульчики"
+      ],
+      "image": { "src": "assets/img/karta.svg", "alt": "Схема проезда к ресторану" },
+      "mapUrl": "https://yandex.ru/maps/?text=Москва, ул. Примерная, 12"
+    }
+  ]
+}

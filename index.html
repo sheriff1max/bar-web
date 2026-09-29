@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <title>Ресторан</title>
+  <meta name="description" content="">
+  <link rel="canonical" href="">
+
+  <!-- Открытый граф: как ссылка выглядит в Telegram / VK / WhatsApp.
+       Картинку можно заменить на свою, положив файл assets/img/og.jpg -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <meta property="og:url" content="">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#12100e">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Структурированные данные для поисковиков (адрес, телефон, часы).
+       Заполняются автоматически из data/site.json — см. assets/js/app.js -->
+  <script type="application/ld+json" id="jsonld">{}</script>
+</head>
+<body>
+
+  <!-- Верхняя панель: логотип, меню, кнопка бронирования. Заполняется из JSON -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a class="brand" href="#top" aria-label="На главную">
+        <span class="brand__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="30" height="30"><circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M16 7c4 4 4.6 9.6 0 18C11.4 16.6 12 11 16 7z" fill="currentColor" opacity=".85"/></svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name" data-field="logoText">…</span>
+          <span class="brand__tagline" data-field="tagline">…</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основное меню">
+        <ul class="nav__list" id="nav-list"><!-- пункты из JSON --></ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--primary btn--sm" id="header-cta" href="#top">Забронировать</a>
+        <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Сюда JS вставляет все блоки из data/site.json сверху вниз -->
+  <main id="main">
+    <div class="loader container" id="loader">
+      <p>Загружаем сайт…</p>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container footer__grid">
+      <div>
+        <p class="footer__logo" data-field="logoText">…</p>
+        <p class="footer__tagline" data-field="tagline">…</p>
+      </div>
+
+      <div>
+        <p class="footer__title">Контакты</p>
+        <p><a id="footer-phone" href="#">…</a></p>
+        <p><a id="footer-email" href="#">…</a></p>
+        <p id="footer-address">…</p>
+      </div>
+
+      <div>
+        <p class="footer__title">Навигация</p>
+        <ul class="footer__nav" id="footer-nav"><!-- из JSON --></ul>
+      </div>
+
+      <div>
+        <p class="footer__title">Мы в соцсетях</p>
+        <ul class="footer__social" id="footer-social"><!-- из JSON --></ul>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span id="footer-copy">…</span>
+      <span>Контент сайта задаётся в <code>data/site.json</code></span>
+    </div>
+  </footer>
+
+  <!-- Сообщение, если JavaScript отключён -->
+  <noscript class="noscript">
+    <p>Для просмотра сайта включите JavaScript: содержимое страниц собирается из файла <code>data/site.json</code>.</p>
+  </noscript>
+
+  <!-- Сообщение об ошибке (например, если открыть index.html двойным кликом) -->
+  <div class="fatal" id="fatal" hidden>
+    <div class="container">
+      <h2>Не удалось загрузить содержимое сайта</h2>
+      <p id="fatal-text"></p>
+      <p>Если вы открыли файл двойным кликом (адрес начинается с <code>file://</code>), браузер блокирует чтение JSON. Запустите локальный сервер:</p>
+      <pre><code>cd restaurant-site
+python3 -m http.server 8080
+# затем откройте http://localhost:8080</code></pre>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

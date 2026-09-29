@@ -1,0 +1,18 @@
+# --- зависимости и кэш (в репозиторий не попадают) ---
+node_modules/
+npm-debug.log*
+
+# --- исходники фото: они тяжёлые, в git кладём только готовые jpg/webp ---
+assets/img/_original/
+
+# --- служебное ---
+.DS_Store
+Thumbs.db
+*.log
+preview.html
+site-preview/
+
+# --- результаты локальных сборок/тестов ---
+_sitemap.xml.tmp
+__pycache__/
+*.pyc

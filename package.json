@@ -1,0 +1,19 @@
+{
+  "name": "restaurant-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Одностраничный сайт ресторана с контентом из data/site.json. Без сборки и рантайм-зависимостей.",
+  "scripts": {
+    "start": "node serve.js",
+    "check": "python3 tools/check_content.py",
+    "test": "bash tools/run_tests.sh",
+    "sitemap": "python3 tools/make_sitemap.py",
+    "images": "python3 tools/optimize_images.py"
+  },
+  "devDependencies": {
+    "jsdom": "^29.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
