@@ -1,0 +1,48 @@
+# ==========================================================================
+# GitHub Pages: публикация сайта при каждом push в ветку main
+# Включается один раз: Settings → Pages → Source: GitHub Actions
+# ==========================================================================
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:      # кнопка ручного запуска в интерфейсе GitHub
+
+# не запускаем две публикации одновременно
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # валидация контента до публикации: битый JSON не уедет на боевой сайт
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Проверка data/site.json
+        run: python3 tools/check_content.py
+
+      - name: Собрать артефакт сайта
+        run: |
+          mkdir -p _site
+          cp -r index.html robots.txt assets data _site/
+          # на Pages сайт лежит по адресу https://user.github.io/repo/ —
+          # пути к JSON и картинкам относительные, поэтому ничего править не нужно
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Публикация
+        uses: actions/deploy-pages@v4
